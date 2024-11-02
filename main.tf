@@ -25,8 +25,3 @@ resource "aws_subnet" "project-terraform-subnet-private" {
     Name = "${var.env}-project-terraform-subnet-private"
   }
 }
-
-output "output_vpc_id" {
-  value = aws_vpc.project-terraform-vpc.id
-
-}
