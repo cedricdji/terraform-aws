@@ -5,3 +5,4 @@ terraform.tfstate.backup
 terraform.tfvars
 terraform-provider-aws
 terraform-provider-azurerm
+.terraform.lock.hcl
