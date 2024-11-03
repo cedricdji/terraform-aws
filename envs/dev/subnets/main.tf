@@ -1,17 +1,17 @@
-resource "aws_subnet" "project-terraform-subnet-public" {
-  vpc_id     = aws_vpc.project-terraform-vpc.id
-  cidr_block = var.subnet_cidr_block_public
-
-  tags = {
-    Name = "${var.env}-project-terraform-subnet-public"
-  }
+provider "aws" {
+  region = var.aws_region
 }
 
-resource "aws_subnet" "project-terraform-subnet-private" {
-  vpc_id     = aws_vpc.project-terraform-vpc.id
-  cidr_block = var.subnet_cidr_block_private
-
-  tags = {
-    Name = "${var.env}-project-terraform-subnet-private"
-  }
+module "subnets" {
+  source = "../../../modules/subnets"
+  env = "dev"
+  vpc_id = module.vpc.vpc_id
+  subnet_cidr_block_public = var.subnet_cidr_block_public
 }
+
+# module "subnets" {
+#   source = "../../../modules/subnets"
+#   env = "dev"
+#   vpc_id = module.vpc.vpc_id
+#   subnet_cidr_block_private = var.subnet_cidr_block_private
+# }
