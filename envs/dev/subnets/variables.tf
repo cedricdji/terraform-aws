@@ -22,3 +22,9 @@ variable "env" {
   default     = "dev"
   
 }
+
+variable "vpc_id" {
+  description = "The VPC ID to deploy into"
+  default     = ""
+  
+}

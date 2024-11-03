@@ -3,6 +3,7 @@ resource "aws_vpc" "project-terraform-vpc" {
   enable_dns_support   = var.enable_dns_support
   enable_dns_hostnames = var.enable_dns_hostnames
 
+
   tags = {
     Name = "${ var.env }-project-terraform-vpc"
   }
