@@ -5,7 +5,7 @@ provider "aws" {
 module "subnets" {
   source = "../../../modules/subnets"
   env = "dev"
-  vpc_id = module.vpc.vpc_id
+  vpc_id = data.terraform_remote_state.vpc.outputs.output_vpc_id
   subnet_cidr_block_public = var.subnet_cidr_block_public
 }
 

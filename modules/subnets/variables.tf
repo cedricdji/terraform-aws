@@ -17,3 +17,9 @@ variable "env" {
   default     = "dev"
   
 }
+
+variable "vpc_id" {
+  description = "The VPC ID"
+  default     = ""
+  
+}

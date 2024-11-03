@@ -1,3 +1,8 @@
+variable "aws_region" {
+  description = "The AWS region to deploy to"
+  default     = "us-west-1"
+  
+}
 
 variable "subnet_cidr_block_public" {
   description = "CIDR block for the public subnet"
